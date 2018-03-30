@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">腎多久</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="hint_email">信箱</string>
+    <string name="hint_password">密碼</string>
+    <string name="hint_name">姓名</string>
+    <string name="hint_record_id">病歷號</string>
+    <string name="btn_login">登入</string>
+    <string name="btn_register">註冊</string>
+    <string name="btn_link_to_register">沒有帳號?請註冊</string>
+    <string name="btn_link_to_login">已經有帳號了!現在登入</string>
+    <string name="welcome">歡迎</string>
+    <string name="btn_logout">登出</string>
+    <string name="name">姓名</string>
+
+    <string name="action_settings">Settings</string>
+
+</resources>
