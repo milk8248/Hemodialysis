@@ -47,10 +47,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
+        inputEmail = (EditText) findViewById(R.id.et_email);
+        inputPassword = (EditText) findViewById(R.id.et_password);
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
+        //btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -89,15 +89,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
         // Link to Register Screen
-        btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),
-                        RegisterActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
+//        btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
+//
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(),
+//                        RegisterActivity.class);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
 
     }
 
@@ -130,25 +130,31 @@ public class LoginActivity extends AppCompatActivity {
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    boolean error = jObj.getString("status_code").equals("success") ? true : false;
+//                    if(jObj.getString("status_code")=="success")
+//                        error = false;
+//                    else error = true;
 
                     // Check for error node in json
-                    if (!error) {
+                    if (error) {
                         // user successfully logged in
                         // Create login session
                         session.setLogin(true);
 
                         // Now store the user in SQLite
-                        String uid = jObj.getString("uid");
+                        Long uid = jObj.getLong("uid");
+                        String name = jObj.getString("name");
+                        String email = jObj.getString("email");
+                        String created_at = jObj.getString("created_at");
 
-                        JSONObject user = jObj.getJSONObject("user");
-                        String name = user.getString("name");
-                        String email = user.getString("email");
-                        String created_at = user
-                                .getString("created_at");
+//                        JSONObject user = jObj.getJSONObject("user");
+//                        String name = user.getString("name");
+//                        String email = user.getString("email");
+//                        String created_at = user
+//                                .getString("created_at");
 
                         // Inserting row in users table
-                        db.addUser(name, email, uid, created_at);
+                        db.addUser(name, email, uid.toString(), created_at);
 
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
@@ -157,7 +163,7 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                     } else {
                         // Error in login. Get the error message
-                        String errorMsg = jObj.getString("error_msg");
+                        String errorMsg = jObj.getString("message");
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }
