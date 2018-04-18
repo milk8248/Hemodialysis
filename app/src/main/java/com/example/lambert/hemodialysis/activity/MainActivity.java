@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity
         HashMap<String, String> user = db.getUserDetails();
         String name = user.get("name");
         String email = user.get("email");
-        Log.d(TAG, "Name Response: " + name.toString());
-        Log.d(TAG, "Email Response: " + email.toString());
+        //Log.d(TAG, "Name Response: " + name.toString());
+        //Log.d(TAG, "Email Response: " + email.toString());
 
         if(navigationView.getHeaderCount() > 0) {
             View header = navigationView.getHeaderView(0);

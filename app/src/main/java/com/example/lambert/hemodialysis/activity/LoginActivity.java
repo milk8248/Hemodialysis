@@ -142,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
                         session.setLogin(true);
 
                         // Now store the user in SQLite
-                        Long uid = jObj.getLong("uid");
+                        String uid = jObj.getString("uid");
                         String name = jObj.getString("name");
                         String email = jObj.getString("email");
                         String created_at = jObj.getString("created_at");
@@ -154,7 +154,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                .getString("created_at");
 
                         // Inserting row in users table
-                        db.addUser(name, email, uid.toString(), created_at);
+                        db.addUser(name, email, uid, created_at);
 
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
