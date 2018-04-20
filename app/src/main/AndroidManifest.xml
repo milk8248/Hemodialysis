@@ -25,15 +25,24 @@
             android:name=".activity.RegisterActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.MainActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+        <!--     <activity
+                 android:name=".activity.MainActivity"
+                 android:launchMode="singleTop"
+                 android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".activity.RealtimeActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"/>
+     -->
+         <activity
+             android:name=".activity.MainActivity"
+             android:launchMode="singleTop"
+             android:screenOrientation="portrait" />
+         <receiver android:name=".activity.AlarmReceiver" />
+
+           <!--  <activity
+                 android:name=".activity.RealtimeActivity"
+                 android:launchMode="singleTop"
+                 android:screenOrientation="portrait"/>
+             -->
+
     </application>
 
 </manifest>
