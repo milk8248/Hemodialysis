@@ -23,8 +23,6 @@ import android.widget.Toast;
 
 import com.example.lambert.hemodialysis.R;
 
-import static com.example.lambert.hemodialysis.activity.Realtime.NOTIFICATION_CHANNEL_ID;
-
 /**
  * A simple {@link Fragment} subclass.
  */
