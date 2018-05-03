@@ -80,12 +80,32 @@ public class State extends Fragment {
         Bundle bundle = getArguments();
         if(bundle!=null){
             String stime = bundle.getString( "time" );
+            int sHour = getHour(stime);
+            int sMinute = getMinute(stime);
+            int totalMinute = sHour*60+sMinute;
+
           //  Toast.makeText( getContext(),"time"+stime,Toast.LENGTH_LONG ).show();
 
-            scheduleNotification(getNotification("距離療程完成時間"+stime+"分鐘"),  Integer.valueOf(stime));
+            scheduleNotification(getNotification("距離療程完成時間"+sHour+"小時"+sMinute+"分鐘"),  Integer.valueOf(totalMinute));
 
         }
         return view;
+    }
+
+    private static final String VALIDATION_EXPRESSION = "[0-2]*[0-9]:[0-5]*[0-9]";
+
+    private int getHour(String time) {
+        if (time == null || !time.matches(VALIDATION_EXPRESSION)) {
+            return -1;
+        }
+        return Integer.valueOf(time.split(":")[0]);
+    }
+
+    private int getMinute(String time) {
+        if (time == null || !time.matches(VALIDATION_EXPRESSION)) {
+            return -1;
+        }
+        return Integer.valueOf(time.split(":")[1]);
     }
 
 
