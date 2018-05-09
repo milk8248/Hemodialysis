@@ -27,14 +27,14 @@
             android:paddingTop="30sp">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tv_bed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="第8床" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -76,18 +76,18 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="10dp"
-                    app:gaugeEndValue="800"
+                    app:gaugeEndValue="100"
                     app:gaugePointEndColor="@color/md_blue_800"
                     app:gaugePointStartColor="@color/md_blue_300"
                     app:gaugeStartAngle="135"
-                    app:gaugeStartValue="200"
+                    app:gaugeStartValue="0"
                     app:gaugeStrokeCap="ROUND"
                     app:gaugeStrokeColor="@color/md_grey_400"
                     app:gaugeStrokeWidth="20dp"
                     app:gaugeSweepAngle="270" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tv_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/gauge2"
@@ -161,9 +161,10 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_VP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="157"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -203,9 +204,10 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_TMP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="157"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -241,16 +243,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="SYS"
+                    android:text="B.FLW"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_BFLW"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="110"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -283,16 +286,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="DIA"
+                    android:text="Na C."
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_NAC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="65"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -324,16 +328,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="VEN"
+                    android:text="UF V"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_UFV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="157"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -366,16 +371,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="TMP"
+                    android:text="UF G"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_UFG"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="157"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -411,16 +417,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="SYS"
+                    android:text="UF R"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_UFR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="110"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -453,16 +460,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="DIA"
+                    android:text="Pulse"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="12sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_pulse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="65"
+                    android:text="0"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
