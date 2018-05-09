@@ -66,6 +66,8 @@ public class State extends Fragment {
     private TextView tvUFG;
     private TextView tvUFR;
     private TextView tvPulse;
+    private TextView tvSYS;
+    private TextView tvDIA;
     private CustomGauge gauge2;
 
     private Handler mThreadHandler;
@@ -185,9 +187,6 @@ public class State extends Fragment {
 
     private void getBedInfo() {
         // Tag used to cancel the request
-        String tag_string_req = "req_register";
-
-
         StringRequest strReq = new StringRequest(Request.Method.GET,
                 AppConfig.URL_BED_INFO, new Response.Listener<String>() {
 
@@ -205,11 +204,12 @@ public class State extends Fragment {
                 tvUFG = (TextView) view.findViewById(R.id.tv_UFG);
                 tvUFR = (TextView) view.findViewById(R.id.tv_UFR);
                 tvPulse = (TextView) view.findViewById(R.id.tv_pulse);
+                tvSYS = (TextView) view.findViewById(R.id.tv_SYS);
+                tvDIA = (TextView) view.findViewById(R.id.tv_DIA);
                 gauge2 = view.findViewById(R.id.gauge2);
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-
                     // User successfully stored in MySQL
                     // Now store the user in sqlite
                     String bedno = Integer.toString(jObj.getInt("bedno"));
@@ -245,6 +245,8 @@ public class State extends Fragment {
                     tvUFG.setText(UF_GOAL);
                     tvUFR.setText(UF_Rate);
                     tvPulse.setText(Pulse);
+                    tvSYS.setText(SYS);
+                    tvDIA.setText(DIA);
 
 
                 } catch (JSONException e) {
