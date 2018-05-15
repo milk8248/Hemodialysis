@@ -140,7 +140,7 @@ public class State extends Fragment {
             int totalMinute = sHour*60+sMinute;
 
           //  Toast.makeText( getContext(),"time"+stime,Toast.LENGTH_LONG ).show();
-            Toast toast = Toast.makeText(view.getContext(), "已設定時間，預計"+sHour+"小時"+sMinute+"分鐘後提醒", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(view.getContext(), "已設定時間，預計療程完成前"+sHour+"小時"+sMinute+"分鐘提醒", Toast.LENGTH_LONG);
             toast.show();
 
             scheduleNotification(getNotification("距離療程完成時間"+sHour+"小時"+sMinute+"分鐘"),  Integer.valueOf(totalMinute));
