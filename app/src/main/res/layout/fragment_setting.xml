@@ -4,9 +4,8 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="500px"
-        android:layout_height="300px"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
         android:text="提醒通知" />
 </RelativeLayout>
